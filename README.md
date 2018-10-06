@@ -8,7 +8,7 @@ https://batamcoin.org
 First install virtualbox
 ----------------
 
-1. install & create Virtual Machine
+install & create Virtual Machine
 	Go New=>Name and operating system =>
 	Name: Ubuntu16A
 	Type: Linux
@@ -39,20 +39,22 @@ Installation steps
 	Log in automatically
 =>Continue  (about 3-5 mins….)  => restart
 
-Development Process
+Share Folder
 -------------------
 
-The `master` branch is regularly built and tested, but is not guaranteed to be
-completely stable. [Tags](https://github.com/batamcoin-project/batamcoin/tags) are created
-regularly to indicate new official, stable release versions of Batamcoin Core.
+Because we use virtualbox, then we install an application to share folders
+=>Devices => Insert Guest Additions CD image… => Run  => insert your password
 
-The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
-
-The developer [mailing list](https://groups.google.com/forum/#!forum/batamcoin-dev)
-should be used to discuss complicated or controversial changes before working
-on a patch set.
-
-Developer IRC can be found on Freenode at #batamcoin-dev.
+-----------RUN IN TERMINAL---------
+sudo apt-get install module-assistant
+sudo m-a prepare
+cd /media {Username}  
+ls
+cd {Username}
+cd VBox_GAs_5.2.16/
+sudo sh VBoxLinuxAdditions.run
+sudo adduser {username} vboxsf
+sudo reboot
 
 Testing
 -------
