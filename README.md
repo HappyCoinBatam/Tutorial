@@ -45,7 +45,7 @@ Share Folder
 Because we use virtualbox, then we install an application to share folders
 =>Devices => Insert Guest Additions CD image… => Run  => insert your password
 
------------RUN IN TERMINAL---------
+-----------RUN IN TERMINAL--------- <br>
 sudo apt-get install module-assistant
 sudo m-a prepare
 cd /media {Username}  
