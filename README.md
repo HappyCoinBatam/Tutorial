@@ -70,34 +70,20 @@ Check the location of the branch first, so that when you edit the  code, no vers
 git branch -a <br>
 git checkout remotes/origin/0.15 <br>
 
-### Automated Testing
+sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils python3 -y <br>
+sudo apt-get install libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev -y <br>
+sudo apt-get install libboost-all-dev -y <br>
+sudo apt-get install software-properties-common <br>
+sudo add-apt-repository ppa:bitcoin/bitcoin <br>
+sudo apt-get update <br>
+sudo apt-get install libdb4.8-dev libdb4.8++-dev -y <br>
+sudo apt-get install libminiupnpc-dev -y <br>
+sudo apt-get install libzmq3-dev -y <br>
+sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev  <br>qttools5-dev-tools libprotobuf-dev protobuf-compiler -y <br>
+sudo apt-get install libqrencode-dev -y <br>
 
-Developers are strongly encouraged to write [unit tests](src/test/README.md) for new code, and to
-submit new unit tests for old code. Unit tests can be compiled and run
-(assuming they weren't disabled in configure) with: `make check`. Further details on running
-and extending unit tests can be found in [/src/test/README.md](/src/test/README.md).
-
-There are also [regression and integration tests](/test), written
-in Python, that are run automatically on the build server.
-These tests can be run (if the [test dependencies](/test) are installed) with: `test/functional/test_runner.py`
-
-The Travis CI system makes sure that every pull request is built for Windows, Linux, and OS X, and that unit/sanity tests are run automatically.
-
-### Manual Quality Assurance (QA) Testing
-
-Changes should be tested by somebody other than the developer who wrote the
-code. This is especially important for large or high-risk changes. It is useful
-to add a test plan to the pull request description if testing the changes is
-not straightforward.
-
-Translations
-------------
-
-We only accept translation fixes that are submitted through [Bitcoin Core's Transifex page](https://www.transifex.com/projects/p/bitcoin/).
-Translations are converted to Batamcoin periodically.
-
-Translations are periodically pulled from Transifex and merged into the git repository. See the
-[translation process](doc/translation_process.md) for details on how this works.
-
-**Important**: We do not accept translation changes as GitHub pull requests because the next
-pull from Transifex would automatically overwrite them again.
+---install pip and scrypt <br>
+sudo apt-get install python-setuptools python-dev build-essential -y <br>
+sudo easy_install pip  <br>
+sudo pip install --upgrade virtualenv  <br>
+sudo pip install scrypt construct==2.5.2 <br>
