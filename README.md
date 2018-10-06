@@ -8,61 +8,67 @@ https://batamcoin.org
 First install virtualbox
 ----------------
 
-install & create Virtual Machine
-	Go New=>Name and operating system =>
-	Name: Ubuntu16A
-	Type: Linux
-	Version: Ubuntu (64-bit)
-=>Next => Memory size (4096MB if possible as C++ is memory hungry) =>Next 
-=> Hard disk (Create a virtual hard disk now) => Create
-=> Hard disk file type => VDI (default)
-=> Storage on physical hard disk (Dynamically allocated) => Next
-=> File location and size (25GB)  => Create
-=> Start => Click folder to select virtual optical drive (iso file)
-=> ubuntu-16.04.3-desktop-amd64 =>open => Start
+install & create Virtual Machine <br>
+	Go New=>Name and operating system => <br>
+	Name: Ubuntu16A <br>
+	Type: Linux <br>
+	Version: Ubuntu (64-bit) <br>
+=>Next => Memory size (4096MB if possible as C++ is memory hungry) =>Next  <br>
+=> Hard disk (Create a virtual hard disk now) => Create <br>
+=> Hard disk file type => VDI (default) <br>
+=> Storage on physical hard disk (Dynamically allocated) => Next <br>
+=> File location and size (25GB)  => Create <br>
+=> Start => Click folder to select virtual optical drive (iso file) <br>
+=> ubuntu-16.04.3-desktop-amd64 =>open => Start <br>
 
 Installation steps
 -------
 
-=> Install Ubuntu 
-=> Check “Download updates while installing Ubuntu”
-=> Optional “Install third-party software ….. “
-=> Continue
-=> Accept “Erase disk and install ubuntu” => Install Now
-=> Write the changes to disk ? => Continue
-=> Where are you? Select or type your location => Continue
-=> Choose your keyboard layout “English (US)”  => Continue
-	Your name			: Ubuntu
-	Your computer’s name	: Ubuntu-VirtualBox
-	Pick a username		: ubuntu
-	Choose a password		: password
-	Log in automatically
-=>Continue  (about 3-5 mins….)  => restart
+=> Install Ubuntu  <br>
+=> Check “Download updates while installing Ubuntu” <br>
+=> Optional “Install third-party software ….. “ <br>
+=> Continue <br>
+=> Accept “Erase disk and install ubuntu” => Install Now <br>
+=> Write the changes to disk ? => Continue <br>
+=> Where are you? Select or type your location => Continue <br>
+=> Choose your keyboard layout “English (US)”  => Continue <br>
+	Your name			: Ubuntu  <br>
+	Your computer’s name	: Ubuntu-VirtualBox <br>
+	Pick a username		: ubuntu <br>
+	Choose a password		: password <br>
+	Log in automatically <br>
+=>Continue  (about 3-5 mins….)  => restart <br>
 
 Share Folder
 -------------------
 
-Because we use virtualbox, then we install an application to share folders
-=>Devices => Insert Guest Additions CD image… => Run  => insert your password
+Because we use virtualbox, then we install an application to share folders <br>
+=>Devices => Insert Guest Additions CD image… => Run  => insert your password <br>
 
 -----------RUN IN TERMINAL--------- <br>
-sudo apt-get install module-assistant
-sudo m-a prepare
-cd /media {Username}  
-ls
-cd {Username}
-cd VBox_GAs_5.2.16/
-sudo sh VBoxLinuxAdditions.run
-sudo adduser {username} vboxsf
-sudo reboot
+sudo apt-get install module-assistant <br>
+sudo m-a prepare <br>
+cd /media {Username}  <br>
+ls <br>
+cd {Username} <br>
+cd VBox_GAs_5.2.16/ <br>
+sudo sh VBoxLinuxAdditions.run <br>
+sudo adduser {username} vboxsf <br>
+sudo reboot <br>
 
-Testing
+Intall
 -------
 
-Testing and code review is the bottleneck for development; we get more pull
-requests than we can review and test on short notice. Please be patient and help out by testing
-other people's pull requests, and remember this is a security-critical project where any mistake might cost people
-lots of money.
+first if you haven't installed GIT, install it first <br>
+enter the terminal is at home <br>
+clone litecoin //back to home <br>
+sudo apt-get install git  <br>
+git clone https://github.com/litecoin-project/litecoin <br>
+on home change the name of the "litecoin" folder to "Batamcoin"  <br>
+cd Batamcoin <br>
+Check the location of the branch first, so that when you edit the  code, no version error occurs <br>
+git branch -a <br>
+git checkout remotes/origin/0.15 <br>
 
 ### Automated Testing
 
