@@ -280,11 +280,62 @@ sudo ./configure <br>
 sudo make <br>
 
 
+Setup 2 virtual machine
+---------------
+Now we need to have at least one other connection to the network in order to mine. <br>
+We can either set up another computer, or lease a VPS which allows us to set up a mining pool for others to mine batamcoin. <br>
+ 
+But for just practice and demo purpose, we clone our previous VM. <br>
+However, before we clone it, we need to make sure our network settings match the actual network adapter; <br>
+
+VM 1 – Acting as Server <br>
+A) Right-click on the VM =>Settings=>Network  <br>
+Select Attached to: Bridged Adapter <br>
+Name: [Drop down and select the correct adapter for your Host machine] <br>
+
+B) Right-click on the VM =>Clone  <br>
+Give a different name, eg Ubuntu-Server <br>
+Check the “Reinitialize the MAC address of all network cards
+Clone type ; “Linked clone” <br>
+
+C) Start the Ubuntu-Server VM… and go to the hidden  <br>folder .batamcoin at the home folder <br>
+(tip, use ctrl+h to show all hidden folders) and delete all  contents in it (to avoid having similar wallet as the Linked-VM). <br>
+Create a new file name it batamcoin.conf  (the configuration file for a server); <br>
+		
+rpcuser=user <br>
+rpcpassword=pass <br>
+rpcbind=192.168.1.34:20332 <br>
+rpcallowip=192.168.1.1/24 <br>
+server=1 <br>
+addnode=192.168.1.43 <br>
+
+D) Go to network connection information to get the IP address; 192.168.xxx.xxx  <br>
+
+VM 2 – Acting as Client (Miner) <br>
+
+E) Now go back to the Linked-VM we used to clone (Linked Base for Ubuntu-Miner…..) <br>
+Right-click on the VM =>Settings=>System=>Processor <br>
+Increase the Processor(s) from 1 CPU to 4CPU (only if you have enough cores to spare, <br>
+eg i7-8700 has 6Cores and 12 Threads… so you will see 12 CPUs, so you can spare 4 CPUs for mining) <br>
+This will speed up the mining with higher Hash power. <br>
+
+F) We shall use this as a client VM or miner node.  (It is not exactly necessary for a “client-server” configuration as peer-to-peer networks can toggle between modes, acting either as server or client via file sharing protocol, etc.)  <br>
+
+Similarly, go to the hidden folder .batamcoin at the home folder and add a new file,  batamcoin.conf (unlike the server, do not delete the files under this directory!); <br>
+	
+rpcuser=user <br>
+rpcpassword=pass <br>
+rpcbind=192.168.1.43:20332 <br>
+rpcallowip=192.168.1.1/24 <br>
+server=1 <br>
+addnode=192.168.1.34 <br>
+
 now mining testing
 ----------
 Batamcoin>src>qt> <br>
 ./batamcoin-qt <br>
 
+in the application, click Help "Debug Windows" >> the Console tab type "generate nblocks" example "generate 5" <br>
 
 
 
